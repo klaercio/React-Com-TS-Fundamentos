@@ -1,4 +1,5 @@
 import React from "react";
+import './style.scss'
 
 interface BotaoProps {
     text: string;
@@ -6,6 +7,6 @@ interface BotaoProps {
 
 export default function Botao(props: BotaoProps) {
     return <>
-        <button className="bg-blue-500 rounded-[5px] w-[20rem]">{props.text}</button>
+        <button className="botao">{props.text}</button>
     </>
 }
