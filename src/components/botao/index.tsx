@@ -1,5 +1,5 @@
 import React from "react";
-import './style.scss'
+import botao from './botao.module.scss'
 
 interface BotaoProps {
     text: string;
@@ -7,6 +7,6 @@ interface BotaoProps {
 
 export default function Botao(props: BotaoProps) {
     return <>
-        <button className="botao">{props.text}</button>
+        <button className={botao.botao}>{props.text}</button>
     </>
 }

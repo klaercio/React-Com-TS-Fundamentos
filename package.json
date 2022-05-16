@@ -44,6 +44,7 @@
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.13",
     "sass": "^1.51.0",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }
