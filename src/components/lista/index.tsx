@@ -1,5 +1,6 @@
 import React from "react";
 import lista from "./lista.module.scss";
+import Item from "./item";
 
 export default function Lista() {
 
@@ -23,10 +24,7 @@ export default function Lista() {
                 {
                     tarefas.map((objeto, indice)=> {
                         return <>
-                                <li key={indice} className="item">
-                                    <h3>{objeto.tarefa}</h3>
-                                    <span>{objeto.tempo}</span>
-                                </li>
+                                <Item key={indice} {...objeto}/>
                         </>;
                     })
                 }
