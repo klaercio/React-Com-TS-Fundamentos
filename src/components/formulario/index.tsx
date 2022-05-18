@@ -1,25 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, SetStateAction} from "react";
+import { ITarefa } from "../../types/ITarefa";
 import Botao from "../botao";
 import formulario from "./formulario.module.scss";
 
-interface Argumentos {
-    tarefa: string;
-    tempo: string;
-}
 
 interface FormularioProps {
-    tarefas: Argumentos[];
-    setTar: ()=>void;
+    setTarefas : React.Dispatch<SetStateAction<ITarefa[]>>;
 }
 
-
-export default function Formulario(props: FormularioProps) {
+export default function Formulario(props:FormularioProps ){
 
     const [tarefa, setTarefa] = useState({tarefa: "", tempo: "00:00:00"});
 
     function adicionarTarefa(evento: React.FormEvent ) {
         evento.preventDefault();
-        props.setTar( Anteriores =>[...Anteriores, {tarefa}]);
+        props.setTarefas( tarefasAntigas => [...tarefasAntigas, {...tarefa}]);
     }
 
     return <>

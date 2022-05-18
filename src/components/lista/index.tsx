@@ -1,23 +1,16 @@
 import lista from "./lista.module.scss";
 import Item from "./item";
+import { ITarefa } from "../../types/ITarefa";
 
-interface Argumentos {
-    tarefa: string;
-    tempo: string;
-}
 
-interface ListaProps {
-    tarefas: Argumentos[];
-}
-
-export default function Lista( props: ListaProps ) {
+export default function Lista( {tarefas} : {tarefas: ITarefa[]} ) {
     
     return<>
         <aside className={lista.listaTarefas}>
             <h2>Estudos do dia</h2>
             <ul>
                 {
-                    props.tarefas.map((objeto, indice)=> {
+                    tarefas.map((objeto, indice)=> {
                         return <>
                                 <Item key={indice} {...objeto}/>
                         </>;
