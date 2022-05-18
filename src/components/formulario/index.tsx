@@ -2,6 +2,7 @@ import React, { useState, SetStateAction} from "react";
 import { ITarefa } from "../../types/ITarefa";
 import Botao from "../botao";
 import formulario from "./formulario.module.scss";
+import { v4 as uuidv4} from 'uuid';
 
 
 interface FormularioProps {
@@ -14,7 +15,14 @@ export default function Formulario(props:FormularioProps ){
 
     function adicionarTarefa(evento: React.FormEvent ) {
         evento.preventDefault();
-        props.setTarefas( tarefasAntigas => [...tarefasAntigas, {...tarefa}]);
+        props.setTarefas( tarefasAntigas =>
+             [...tarefasAntigas,
+             {...tarefa, 
+             selecionado: false,
+             completado:false,
+             id: uuidv4()}
+            ]);
+        setTarefa({tarefa: "", tempo: "00:00:00"});
     }
 
     return <>
