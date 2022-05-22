@@ -1,5 +1,5 @@
 import React from "react";
-import botao from './botao.module.scss'
+import botao from './botao.module.scss';
 
 interface BotaoProps {
     text: string;
@@ -11,6 +11,6 @@ export default function Botao(props: BotaoProps) {
     const tipo = props.type === undefined? 'button' : props.type;
 
     return <>
-        <button className={botao.botao} type={tipo}>{props.text}</button>
+        <button className={botao.botao}  type={tipo}>{props.text}</button>
     </>
 }

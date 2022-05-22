@@ -1,6 +1,6 @@
 import React from "react";
 import { ITarefa } from "../../../types/ITarefa";
-import lista from "../lista.module.scss"
+import lista from "./item.module.scss"
 
 interface ItemProps extends ITarefa{
     selecionaTarefa: (tarefaSelecionada: ITarefa) => void;
